@@ -1,0 +1,96 @@
+.BodyFeed {
+    margin: 0 auto 6.4rem;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    place-content: center;
+    position: absolute;
+    background: #fff;
+}
+
+.BodyFeed-header {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    place-content: center;
+    background: #fff;
+}
+
+.BodyFeed_img {
+    display: block;
+    padding-left: 50px;
+}
+
+.BodyFeed_description {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    padding: 2rem;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+        segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+        segoe ui emoji, segoe ui symbol;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.4rem;
+    color: #1c1d1f;
+}
+
+@media (min-width: 61.31em) {
+    .BodyFeed .BodyFeed_descriptionJ {
+        left: 4.8rem;
+        top: 6.4rem;
+        max-width: 44rem;
+    }
+}
+
+.BodyFeed_body {
+    align-items: center;
+    padding: 50px;
+    width: 100vw;
+}
+
+.BodyFeed_heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.h2 {
+    color: #1c1d1f;
+    padding-left: 30px;
+    font-family: SuisseWorks, Georgia, Times, times new roman, serif,
+        apple color emoji, segoe ui emoji, segoe ui symbol;
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 1.25;
+    letter-spacing: -0.05rem;
+}
+.p {
+    display: block;
+    font-weight: 700;
+    padding-right: 30px;
+}
+
+.BodyFeed_myVideos {
+    padding: 1.6rem 0 0.8rem;
+}
+
+.BodyFeed_myVideos_container {
+    position: relative;
+    display: grid;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    grid-gap: 1.6rem;
+}
+
+.first_video {
+    min-width: 0.1rem;
+    scroll-snap-align: start;
+}
