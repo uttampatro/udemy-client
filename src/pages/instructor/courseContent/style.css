@@ -1,0 +1,101 @@
+.CourseContent {
+    width: 100vw;
+}
+
+.CourseContent_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.logo > img {
+    width: 91px;
+    height: 34px;
+    margin-left: 40px;
+}
+
+.CourseContent_header2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.CourseContent_header2 > button {
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    margin-right: 10px;
+    width: 200px;
+    background-color: #a435f0;
+    border-radius: 5px;
+}
+
+.CourseContent_header2 > button:hover {
+    background-color: #8827c9;
+}
+
+.dialogContent_p {
+    align-items: center;
+    margin-bottom: 40px;
+    padding-left: 100px;
+    color: black;
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.input > input {
+    flex: 1;
+    padding-left: 10px;
+    height: 40px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.CourseButton {
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    width: 100%;
+    font-size: large;
+    background-color: #a435f0;
+    border-radius: 5px;
+}
+
+.CourseButton:hover {
+    background-color: #8827c9;
+}
+.CourseContent_feed {
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+    position: absolute;
+    background: #fff;
+    padding-left: 350px;
+}
+
+.CourseContent_feed_body {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    border: 1px solid lightgray;
+}
+
+.CourseContent_feed_h {
+    border-right: 1px solid lightgray;
+}
+
+.CourseContent_feed_description {
+    color: #1c1d1f;
+    min-width: 1px;
+    position: relative;
+    padding: 10px;
+}
+
+.CourseContent_description_p {
+    font-weight: 600;
+    font-size: x-large;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}

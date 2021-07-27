@@ -1,0 +1,83 @@
+.CreateCourse {
+    width: 100vw;
+}
+
+.CreateCourse_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.logo > img {
+    width: 91px;
+    height: 34px;
+    margin-left: 40px;
+}
+
+.CreateCourse_header2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.CreateCourse_para > p {
+    cursor: pointer;
+    font-weight: 400;
+    margin-right: 30px;
+}
+
+.CreateCourse_icon {
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.CreateCourse_icon > .MuiSvgIcon-root {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.CreateCourse_body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px;
+}
+
+.CreateCourse_body2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+    border: 2px solid lightgray;
+}
+
+.CreateCourse_quote > p {
+    padding-bottom: 200px;
+    align-items: center;
+}
+
+.CreateCourse_form > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.CreateCourse_form > form > input {
+    height: 40px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+
+.CreateCourse_form > form > button {
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    background-color: #a435f0;
+    border: 1px solid transparent;
+}
+
+.CreateCourse_form > form > button:hover {
+    background-color: #8827c9;
+}

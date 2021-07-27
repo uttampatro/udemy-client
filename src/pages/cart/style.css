@@ -1,0 +1,117 @@
+.cartHeader {
+    background-color: rgb(20, 19, 19);
+    color: rgb(252, 248, 248);
+    padding: 50px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    display: flex;
+}
+
+.cartHeader > h2 {
+    font-size: 2.8rem;
+    padding: 20px;
+    font-family: 'SuisseWorks', Georgia, Times, times new roman, serif,
+        apple color emoji, segoe ui emoji, segoe ui symbol;
+    padding-left: 100px;
+}
+
+.cart_feed {
+    display: flex;
+}
+
+.cart_home {
+    display: flex;
+    padding: 40px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    background: #fff;
+    padding-left: 150px;
+}
+
+.cart_home > p {
+    padding-bottom: 5px;
+}
+
+.cartHome_body {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    padding: 8px;
+    border: 1px solid lightgray;
+}
+
+.cartHome_Image {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    border-right: 1px solid lightgray;
+}
+
+.cart_description {
+    color: #1c1d1f;
+    min-width: 1px;
+    position: relative;
+}
+
+.cart_description_p {
+    font-weight: 600;
+    margin-left: 10px;
+    font-size: large;
+    margin-bottom: 10px;
+    padding-right: 5px;
+}
+
+.cart_description > h3 {
+    color: #6a6f73;
+    margin-left: 10px;
+    font-size: small;
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+}
+
+.cart_description > p {
+    font-weight: 500;
+    line-height: 1;
+    margin-left: 10px;
+    margin-top: 0.4rem;
+    white-space: nowrap;
+}
+
+.price > p {
+    color: #a435f0;
+    margin-left: 5px;
+}
+
+.price > h3 {
+    color: blue;
+    margin-top: 40px;
+    margin-left: 5px;
+    font-weight: 400;
+    font-size: medium;
+}
+
+.cart_checkout {
+    padding: 50px;
+}
+
+.cart_checkout > p {
+    padding-bottom: 5px;
+}
+
+.cart_price > h3 {
+    font-size: x-large;
+    margin-top: 5px;
+}
+
+.cart_price > button {
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    margin-top: 10px;
+    width: 200px;
+    background-color: #a435f0;
+}
+
+.cart_price > button:hover {
+    background-color: #8827c9;
+}

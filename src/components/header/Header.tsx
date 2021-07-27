@@ -5,8 +5,27 @@ import SearchOutlined from '@material-ui/icons/SearchOutlined';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
+import { useHistory } from 'react-router';
 
 function Header() {
+    const history = useHistory();
+
+    const createCourse = () => {
+        try {
+            history.push('/createCourse');
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const cart = () => {
+        try {
+            history.push('/cart');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <div className="header">
             <div className="header_body">
@@ -32,19 +51,15 @@ function Header() {
                         </div>
                     </form>
                 </div>
-                <div className="header_para">
-                    <p>Udemy Business</p>
+
+                <div onClick={createCourse} className="header_para">
+                    <p>Instructor</p>
                 </div>
-                <div className="header_para">
-                    <p>Teach on Udemy</p>
-                </div>
-                <div className="header_para">
-                    <p>My learning</p>
-                </div>
+
                 <div className="header_icon">
                     <FavoriteBorderIcon />
                 </div>
-                <div className="header_icon">
+                <div onClick={cart} className="header_icon">
                     <ShoppingCartOutlinedIcon />
                 </div>
                 <div className="header_icon">
