@@ -1,1 +1,1 @@
-c
+export default {}
