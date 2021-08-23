@@ -13,7 +13,7 @@ function LoginPage() {
         try {
             const user = await userServices.login(email, password);
             if (user) {
-                history.push('/body');
+                history.push('/home');
             } else {
                 alert('Invalid Credential');
             }

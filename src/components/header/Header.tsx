@@ -6,6 +6,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 
 function Header() {
     const history = useHistory();
@@ -30,12 +31,15 @@ function Header() {
         <div className="header">
             <div className="header_body">
                 <div>
+                    <Link to={'/home'}>
                     <a href="" className="logo">
                         <img
                             src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
                             alt="Udemy"
                         />
                     </a>
+                    </Link>
+                    
                 </div>
                 <div className="header_para">
                     <p>Categories</p>

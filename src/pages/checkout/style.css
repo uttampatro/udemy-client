@@ -1,3 +1,7 @@
+.checkout {
+    display: flex;
+}
+
 .checkout_header {
     padding: 50px;
     padding-left: 100px;
@@ -10,4 +14,152 @@
     font-size: 32px;
     line-height: 1.25;
     letter-spacing: -0.5px;
+    padding-bottom: 20px;
+}
+
+.form {
+    border: 1px solid lightgray;
+    width: 550px;
+}
+
+.formBox {
+    padding: 20px;
+}
+
+.formBox > label {
+    padding-left: 10px;
+}
+
+.formAddr {
+    display: flex;
+}
+
+.formCountry {
+    padding: 10px;
+}
+
+.formCountry > select {
+    padding: 10px;
+    width: 220px;
+    font-size: medium;
+    margin: 5px;
+}
+
+.formState {
+    padding: 10px;
+}
+
+.formState > select {
+    padding: 10px;
+    width: 220px;
+    font-size: medium;
+    margin: 5px;
+}
+
+.paymentMethod > label {
+    padding-left: 20px;
+}
+
+.creditDetails {
+    border: 1px solid lightgray;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 20px;
+    width: 500px;
+}
+
+.creditDetails > input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: medium;
+}
+
+.expireDate {
+    display: flex;
+}
+
+.months > select {
+    padding: 10px;
+    padding-right: 10px;
+    width: 100px;
+    font-size: medium;
+    margin: 5px;
+}
+
+.years > select {
+    padding: 10px;
+    padding-right: 10px;
+    width: 100px;
+    font-size: medium;
+    margin: 5px;
+}
+
+.creditCode {
+    padding: 5px;
+}
+
+.creditCode > input {
+    padding: 5px;
+    width: 230px;
+    height: 40px;
+}
+
+.checkout_footer {
+    padding-right: 20px;
+}
+
+.checkout_footer > h2 {
+    font-family: SuisseWorks, Georgia, Times, times new roman, serif,
+        apple color emoji, segoe ui emoji, segoe ui symbol;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    padding-bottom: 20px;
+}
+
+.checkout_footerDetail {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 25px;
+}
+
+.checkout_Sidebar {
+    padding-top: 10px;
+    border: 1px solid lightgray;
+    margin-top: 40px;
+    margin-left: 50px;
+    width: 400px;
+}
+
+.checkout_Sidebar > h2 {
+    font-family: SuisseWorks, Georgia, Times, times new roman, serif,
+        apple color emoji, segoe ui emoji, segoe ui symbol;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.25;
+    padding-bottom: 20px;
+}
+
+.checkout_Sidebar > button {
+    color: white;
+    cursor: pointer;
+    height: 50px;
+    font-size: large;
+    font-weight: 700;
+    margin: 10px;
+    width: 370px;
+    margin-left: 15px;
+    margin-top: 20px;
+    background-color: #a435f0;
+}
+
+.checkout_footerDetail > p {
+    padding-right: 20px;
+    font-weight: 500;
+}
+
+.checkout_Sidebar > button:hover {
+    background-color: #8827c9;
 }
