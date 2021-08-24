@@ -1,32 +1,66 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useReducer } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import {
+    homePageReducer,
+    initialHomePageState,
+    useHomePageDispatchHook,
+} from './store';
 import './style.css';
 
 function Index() {
+    const [state, customDispatch] = useReducer(
+        homePageReducer,
+        initialHomePageState
+    );
+    const homePageDispatch = useHomePageDispatchHook(customDispatch);
+    const { fetchAllCourse } = homePageDispatch;
+    const { courses, isFetching, error } = state;
+
+    useEffect(() => {
+        fetchAllCourse();
+    }, []);
+
+    useEffect(() => {
+        if (error) {
+            alert('something went wrong');
+        }
+    }, [error]);
+
+    if (isFetching) {
+        return <>Loading....</>; // TODO: Put loader
+    }
     return (
         <div className="home">
-            <Link to={'/courseDetails'} style={{ textDecoration: 'none' }}>
-                <div className="home_body">
-                    <div className="home_img">
-                        <img
-                            width="240"
-                            height="135"
-                            src="https://img-c.udemycdn.com/course/240x135/3124072_2957_8.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div className="home_description">
-                        <p className="home_description_p">
-                            The Python Mega Course: Build 10 Real World
-                            Applications
-                        </p>
+            {courses.map(course => {
+                return (
+                    <Link
+                        to={`/courseDetails/${course.id}`}
+                        style={{ textDecoration: 'none' }}
+                    >
+                        <div className="home_body">
+                            <div className="home_img">
+                                <img
+                                    width="240"
+                                    height="135"
+                                    src={course.imageUrl}
+                                    alt=""
+                                />
+                            </div>
 
-                        <h3>uttam</h3>
+                            <div className="home_description">
+                                <p className="home_description_p">
+                                    {course.name}
+                                </p>
 
-                        <p>₹499</p>
-                    </div>
-                </div>
-            </Link>
+                                <h3> {course.createdBy.username}</h3>
+
+                                <p> {course.price}</p>
+                            </div>
+                        </div>
+                    </Link>
+                );
+            })}
         </div>
     );
 }

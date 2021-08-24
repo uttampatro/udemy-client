@@ -10,11 +10,50 @@ import {
 } from '@material-ui/core';
 import './style.css';
 import CloseIcon from '@material-ui/icons/Close';
+import { useReducer } from 'react';
+import {
+    courseDetailsPageReducer,
+    initialCourseDetailsPage,
+    useCourseDetailsPageDispatchHook,
+} from './store';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 function Index() {
+    const [state, customDispatch] = useReducer(
+        courseDetailsPageReducer,
+        initialCourseDetailsPage
+    );
+    const courseDetailsPageDispatch =
+        useCourseDetailsPageDispatchHook(customDispatch);
+    const { fetchCourse, fetchAllTopic, fetchAllContent } =
+        courseDetailsPageDispatch;
+    const { course, topics, contents, error, isFetching } = state;
+
+    const { courseId }: any = useParams();
+
+    useEffect(() => {
+        fetchAllTopic(courseId);
+        fetchCourse(courseId);
+    }, []);
+
+    useEffect(() => {
+        if (error) {
+            alert('something went wrong');
+        }
+    }, [error]);
+
     const [showDialog, setShowDialog] = useState(false);
 
-    const openDialog = () => setShowDialog(true);
+    const openDialog = () => {
+        setShowDialog(true);
+    };
+
+    const fetchContentList = (topicId: string) => {
+        openDialog();
+        fetchAllContent(topicId);
+    };
+
     const closeDialog = () => setShowDialog(false);
     const history = useHistory();
 
@@ -25,18 +64,19 @@ function Index() {
             console.log(error);
         }
     };
+
+    if (isFetching) {
+        return <>Loading....</>; // TODO: Put loader
+    }
     return (
         <div className="courseDetails">
             <div className="courseDetails_header">
                 <div className="courseDetails_head1">
-                    <h1>
-                        React Certification Training (beginner to expert level)
-                        2021
-                    </h1>
+                    <h1>{course.name}</h1>
                     <p>
                         Created By{' '}
                         <span>
-                            <a href="">Uttam</a>{' '}
+                            <a href="">{course.createdBy?.username}</a>{' '}
                         </span>
                     </p>
                     <div className="courseDetails_button">
@@ -49,12 +89,12 @@ function Index() {
                     <img
                         width="300"
                         height="150"
-                        src="https://img-c.udemycdn.com/course/240x135/3124072_2957_8.jpg"
+                        src={course.imageUrl}
                         alt=""
                     />
                     <i className="stop circle outline icon"></i>
                     <div>
-                        <h2>₹490</h2>
+                        <h2>₹{course.price}</h2>
                     </div>
                     <div className="courseDetails_button1">
                         <button className="courseDetails_button2">
@@ -66,19 +106,27 @@ function Index() {
                     </div>
                 </div>
             </div>
+
+            <h1>Course topic</h1>
+            {topics.map(topic => {
+                return (
+                    <div
+                        onClick={() => fetchContentList(topic.id)}
+                        className="courseDetails_body"
+                    >
+                        <div className="courseDetails_feed_h">
+                            <h2>1</h2>
+                        </div>
+                        <div className="courseDetails_feed_description">
+                            <p className="courseDetails_description_p">
+                                {topic.name}
+                            </p>
+                        </div>
+                    </div>
+                );
+            })}
+
             <div className="courseDetails_des">
-                <h1>Course topic</h1>
-                <div onClick={openDialog} className="courseDetails_body">
-                    <div className="courseDetails_feed_h">
-                        <h2>1</h2>
-                    </div>
-                    <div className="courseDetails_feed_description">
-                        <p className="courseDetails_description_p">
-                            The Python Mega Course: Build 10 Real World
-                            Applications
-                        </p>
-                    </div>
-                </div>
                 <Dialog open={showDialog}>
                     <div className="courseDetails_closeButton">
                         {closeDialog ? (
@@ -93,19 +141,22 @@ function Index() {
                         <h3>Course content</h3>
                     </div>
                     <DialogContent dividers>
-                        <Box width="600px">
+                        <Box width="100vw">
                             <DialogContentText>
-                                <div className="CourseDetailContent_feed_body">
-                                    <div className="CourseDetailContent_feed_h">
-                                        <h2>1</h2>
-                                    </div>
-                                    <div className="CourseDetailContent_feed_description">
-                                        <p className="CourseDetailContent_description_p">
-                                            The Python Mega Course: Build 10
-                                            Real World Applications
-                                        </p>
-                                    </div>
-                                </div>
+                                {contents.map(content => {
+                                    return (
+                                        <div className="CourseDetailContent_feed_body">
+                                            <div className="CourseDetailContent_feed_h">
+                                                <h2>1</h2>
+                                            </div>
+                                            <div className="CourseDetailContent_feed_description">
+                                                <p className="CourseDetailContent_description_p">
+                                                    {content.content}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
                             </DialogContentText>
                         </Box>
                     </DialogContent>

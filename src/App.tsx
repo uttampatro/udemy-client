@@ -34,7 +34,10 @@ function App() {
                         path={'/createCourseContent'}
                         component={CourseContent}
                     />
-                    <Route path={'/courseDetails'} component={CourseDetails} />
+                    <Route
+                        path={'/courseDetails/:courseId'}
+                        component={CourseDetails}
+                    />
                     <Route path={'/cart'} component={Cart} />
                     <Route path={'/checkout'} component={Checkout} />
                 </Switch>
