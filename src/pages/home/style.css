@@ -1,6 +1,7 @@
 .home {
     display: flex;
     padding: 40px;
+    width: 80%;
     flex-direction: column;
     position: absolute;
     background: #fff;
