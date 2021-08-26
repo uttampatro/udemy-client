@@ -6,7 +6,6 @@ export interface UserDTO {
 export interface CourseDTO {
     id: string;
     name: string;
-    description: string;
     price: string;
     imageUrl: string;
     createdBy: UserDTO;
@@ -14,18 +13,28 @@ export interface CourseDTO {
 
 export interface TopicDTO {
     id: string;
+    sequence: number;
     name: string;
     course: CourseDTO;
 }
 
+export enum CourseContentType {
+    TEXT = 1,
+    IMAGE = 2,
+    VIDEO = 3,
+    NONE = 0,
+}
+
 export interface ICourseContent {
-    type: string;
+    type: CourseContentType;
     text: string;
     videoUrl: string;
     imageUrl: string;
 }
 
 export interface ContentDTO {
-    content: ICourseContent[];
+    title: string;
+    sequence: number;
+    data: ICourseContent;
     topic: TopicDTO;
 }

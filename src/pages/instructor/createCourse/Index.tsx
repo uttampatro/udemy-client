@@ -1,14 +1,40 @@
-import React, { useState } from 'react';
+import React, { useReducer, useState } from 'react';
 import './style.css';
 import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
 import { Avatar, IconButton } from '@material-ui/core';
 import { useHistory } from 'react-router';
+import {
+    createCoursePageReducer,
+    initialCreateCoursePage,
+    useCreateCoursePageDispatchHook,
+} from './store';
+import { useEffect } from 'react';
 
-function Index() {
-    const [name, setName] = useState('');
-    const [imageUrl, setImageUrl] = useState('');
-    const [price, setPrice] = useState<number>();
+function CourseCreate() {
+    const User = localStorage.getItem('user');
+    const user = User ? JSON.parse(User) : undefined;
+
+    const Course = localStorage.getItem('createCourse');
+    const course = Course ? JSON.parse(Course) : undefined;
+
+    const [state, customDispatch] = useReducer(
+        createCoursePageReducer,
+        initialCreateCoursePage
+    );
+
+    const { name, price, imageUrl, error, isCreating } = state;
+    const createCoursePageDispatch =
+        useCreateCoursePageDispatchHook(customDispatch);
+    const { setName, setImageUrl, setPrice, createCourse } =
+        createCoursePageDispatch;
+
     const history = useHistory();
+
+    useEffect(() => {
+        if (error) {
+            alert(JSON.stringify(error));
+        }
+    }, [error]);
 
     const goToBody = () => {
         try {
@@ -20,11 +46,25 @@ function Index() {
 
     const createCourseTopic = () => {
         try {
-            history.push('/createCourseTopic');
+            history.push(`/createCourseTopic`);
         } catch (error) {
             console.log(error);
         }
     };
+
+    const createCourseEntry = async () => {
+        try {
+            await createCourse({
+                name: name,
+                price: price,
+                imageUrl: imageUrl,
+                userId: user.id,
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
     return (
         <div className="CreateCourse">
             <div className="CreateCourse_header">
@@ -72,14 +112,14 @@ function Index() {
                             />
                             <input
                                 value={price}
-                                onChange={e =>
-                                    setPrice(parseInt(e.target.value))
-                                }
+                                onChange={e => setPrice(e.target.value)}
                                 required
                                 placeholder="Price"
                                 type="text"
                             />
-                            <button type="submit">Create Your Course</button>
+                            <button type="submit" onClick={createCourseEntry}>
+                                Create Your Course
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -88,4 +128,4 @@ function Index() {
     );
 }
 
-export default Index;
+export default CourseCreate;

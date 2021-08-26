@@ -69,10 +69,10 @@
 .CourseContent_feed {
     display: flex;
     padding: 40px;
+    width: 50%;
     flex-direction: column;
     position: absolute;
     background: #fff;
-    padding-left: 350px;
 }
 
 .CourseContent_feed_body {
@@ -98,4 +98,15 @@
     font-size: x-large;
     margin-bottom: 10px;
     padding-top: 10px;
+}
+
+.courseDetails_closeButton {
+    display: flex;
+    border-right: 1px solid lightgray;
+}
+.courseDetails_closeButton > h2 {
+    margin-top: 0px;
+    padding-left: 180px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 0px;
 }

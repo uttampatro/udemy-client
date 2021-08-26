@@ -1,14 +1,14 @@
 import React from 'react';
-import Index from '../pages/cart/Index';
+import Cart from '../pages/cart/Index';
 import Header from './header/Header';
 
-function Cart() {
+function CartPage() {
     return (
         <div>
             <Header />
-            <Index />
+            <Cart />
         </div>
     );
 }
 
-export default Cart;
+export default CartPage;

@@ -2,13 +2,13 @@ import React from 'react';
 import './App.css';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import LoginPage from './pages/login/Login';
-import Home from './components/Home';
-import CourseDetails from './components/CourseDetails';
+import HomePage from './components/Home';
+import CourseDetailsPage from './components/CourseDetails';
 import CourseTopic from './pages/instructor/courseTopic/Index';
-import Course from './pages/instructor/course/Index';
+import Course from './pages/instructor/createCourse/Index';
 import CourseContent from './pages/instructor/courseContent/Index';
-import Cart from './components/Cart';
-import Checkout from './components/Checkout';
+import CartPage from './components/Cart';
+import CheckoutPage from './components/Checkout';
 
 function App() {
     const userExists = localStorage.getItem('user');
@@ -24,22 +24,22 @@ function App() {
                         ></Redirect>
                     </Route>
                     <Route path={'/login'} component={LoginPage} />
-                    <Route path={'/home'} component={Home} />
+                    <Route path={'/home'} component={HomePage} />
                     <Route path={'/createCourse'} component={Course} />
                     <Route
                         path={'/createCourseTopic'}
                         component={CourseTopic}
                     />
                     <Route
-                        path={'/createCourseContent'}
+                        path={'/createCourseContent/:topicId'}
                         component={CourseContent}
                     />
                     <Route
                         path={'/courseDetails/:courseId'}
-                        component={CourseDetails}
+                        component={CourseDetailsPage}
                     />
-                    <Route path={'/cart'} component={Cart} />
-                    <Route path={'/checkout'} component={Checkout} />
+                    <Route path={'/cart'} component={CartPage} />
+                    <Route path={'/checkout'} component={CheckoutPage} />
                 </Switch>
             </div>
         </div>

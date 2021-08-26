@@ -7,13 +7,13 @@ export interface ICourseDetailsState {
     contents: ContentDTO[];
     error: string;
     isFetching: boolean;
+    isContentFetching: boolean;
 }
 
 export const initialCourseDetailsPage: ICourseDetailsState = {
     course: {
         id: '',
         name: '',
-        description: '',
         price: '',
         imageUrl: '',
         createdBy: {
@@ -25,6 +25,7 @@ export const initialCourseDetailsPage: ICourseDetailsState = {
     contents: [],
     error: '',
     isFetching: true,
+    isContentFetching: true,
 };
 
 export interface ReducerAction {
@@ -50,11 +51,11 @@ export const courseDetailsPageReducer = (
         case 'GETTING_ALL_TOPIC_FAILURE':
             return { ...state, error: action.payload, isFetching: false };
         case 'GETTING_ALL_CONTENT':
-            return { ...state, isFetching: true };
-        case 'GETING_ALL_CONTENT_SUCCESS':
-            return { ...state, contents: action.payload, isFetching: false };
-        case 'GETING_ALL_CONTENT_FAILURE':
-            return { ...state, error: action.payload, isFetching: false };
+            return { ...state, isContentFetching: true };
+        case 'GETTING_ALL_CONTENT_SUCCESS':
+            return { ...state, contents: action.payload, isContentFetching: false };
+        case 'GETTING_ALL_CONTENT_FAILURE':
+            return { ...state, error: action.payload, isContentFetching: false };
         default:
             throw new Error('Invalid action');
     }
@@ -69,7 +70,7 @@ export const useCourseDetailsPageDispatchHook = (
         });
     };
 
-    const gettingCourseSuccess = (course: CourseDTO[]) => {
+    const gettingCourseSuccess = (course: CourseDTO) => {
         dispatch({
             type: 'GETTING_COURSE_SUCCESS',
             payload: course,

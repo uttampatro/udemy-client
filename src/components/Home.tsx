@@ -1,14 +1,14 @@
 import React from 'react';
-import Index from '../pages/home/Index';
+import Home from '../pages/home/Index';
 import Header from './header/Header';
 
-function Home() {
+function HomePage() {
     return (
         <div>
             <Header />
-            <Index />
+            <Home />
         </div>
     );
 }
 
-export default Home;
+export default HomePage;

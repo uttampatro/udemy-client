@@ -1,14 +1,14 @@
 import React from 'react';
-import Index from '../pages/checkout/Index';
+import Checkout from '../pages/checkout/Index';
 import Header from './header/Header';
 
-function Checkout() {
+function CheckoutPage() {
     return (
         <div>
             <Header />
-            <Index />
+            <Checkout />
         </div>
     );
 }
 
-export default Checkout;
+export default CheckoutPage;

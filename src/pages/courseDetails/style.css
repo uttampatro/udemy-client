@@ -125,11 +125,12 @@ h2 {
 
 .courseDetails_closeButton {
     display: flex;
+    border-right: 1px solid lightgray;
 }
 
 .courseDetails_closeButton > h3 {
     margin-top: 12px;
-    padding-left: 170px;
+    /* padding-left: 200px; */
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -137,6 +138,7 @@ h2 {
     cursor: pointer;
     position: relative;
     display: flex;
+    width: 100%;
     margin-right: 70px;
     border: 1px solid lightgray;
 }
@@ -147,10 +149,27 @@ h2 {
 
 .CourseDetailContent_feed_description {
     color: #1c1d1f;
-    min-width: 1px;
+    width: 100vw;
     position: relative;
     padding: 10px;
 }
 .CourseDetailContent_feed_description {
     padding-top: 25px;
+}
+
+.CourseDetailContent_description_p > p {
+    color: blue;
+    text-decoration: underline;
+}
+
+.CourseDetailContent_description_p > p:hover {
+    color: rgb(83, 99, 238);
+}
+
+.CourseDetailContent_description_p > h3 {
+    font-weight: 500;
+}
+
+.courseDetails_Content_Data_p > p {
+    color: black;
 }

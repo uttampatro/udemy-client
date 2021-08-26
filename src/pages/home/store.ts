@@ -23,11 +23,11 @@ export const homePageReducer = (
     action: ReducerAction
 ): IHomeState => {
     switch (action.type) {
-        case 'GETING_ALL_COURSE':
+        case 'GETTING_ALL_COURSE':
             return { ...state, isFetching: true };
-        case 'GETING_ALL_COURSE_SUCCESS':
+        case 'GETTING_ALL_COURSE_SUCCESS':
             return { ...state, courses: action.payload, isFetching: false };
-        case 'GETING_ALL_COURSE_FAILURE':
+        case 'GETtING_ALL_COURSE_FAILURE':
             return { ...state, error: action.payload, isFetching: false };
         default:
             throw new Error('Invalid action');
@@ -37,20 +37,20 @@ export const homePageReducer = (
 export const useHomePageDispatchHook = (dispatch: (arg: any) => void) => {
     const gettingAllCourse = () => {
         dispatch({
-            type: 'GETING_ALL_COURSE',
+            type: 'GETTING_ALL_COURSE',
         });
     };
 
     const gettingAllCourseSuccess = (courses: CourseDTO[]) => {
         dispatch({
-            type: 'GETING_ALL_COURSE_SUCCESS',
+            type: 'GETTING_ALL_COURSE_SUCCESS',
             payload: courses,
         });
     };
 
     const gettingAllCourseFailure = (error: string) => {
         dispatch({
-            type: 'GETING_ALL_COURSE_FAILURE',
+            type: 'GETTING_ALL_COURSE_FAILURE',
             payload: error,
         });
     };

@@ -52,6 +52,17 @@
     font-size: 20px;
 }
 
+.courseDetails_closeButton {
+    display: flex;
+    border-right: 1px solid lightgray;
+}
+.courseDetails_closeButton > h2 {
+    margin-top: 0px;
+    padding-left: 200px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 0px;
+}
+
 .CourseButton {
     color: white;
     cursor: pointer;
@@ -69,10 +80,10 @@
 .CourseTopic_feed {
     display: flex;
     padding: 40px;
+    width: 50%;
     flex-direction: column;
     position: absolute;
     background: #fff;
-    padding-left: 350px;
 }
 
 .CourseTopic_feed_body {
@@ -84,6 +95,11 @@
 
 .CourseTopic_feed_h {
     border-right: 1px solid lightgray;
+    width: 50px;
+}
+
+.CourseTopic_feed_h > h2 {
+    color: black;
 }
 
 .CourseTopic_feed_description {
@@ -94,8 +110,18 @@
 }
 
 .CourseTopic_description_p {
-    font-weight: 600;
+    font-weight: 500;
     font-size: x-large;
     margin-bottom: 10px;
     padding-top: 10px;
+}
+
+.input {
+    padding-bottom: 20px;
+}
+
+.input > label {
+    color: black;
+    font-size: medium;
+    margin-bottom: 100px;
 }

@@ -8,7 +8,7 @@ import {
 } from './store';
 import './style.css';
 
-function Index() {
+function Home() {
     const [state, customDispatch] = useReducer(
         homePageReducer,
         initialHomePageState
@@ -65,4 +65,4 @@ function Index() {
     );
 }
 
-export default Index;
+export default Home;

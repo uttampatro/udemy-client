@@ -1,14 +1,14 @@
-import React from 'react'
-import Index from '../pages/courseDetails/Index'
-import Header from './header/Header'
+import React from 'react';
+import CourseDetails from '../pages/courseDetails/Index';
+import Header from './header/Header';
 
-function CourseDetails() {
+function CourseDetailsPage() {
     return (
         <div>
             <Header />
-            <Index />
+            <CourseDetails />
         </div>
-    )
+    );
 }
 
-export default CourseDetails
+export default CourseDetailsPage;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-function Index() {
+function Checkout() {
     return (
         <div className="checkout">
             <div className="checkout_header">
@@ -187,4 +187,4 @@ function Index() {
     );
 }
 
-export default Index;
+export default Checkout;

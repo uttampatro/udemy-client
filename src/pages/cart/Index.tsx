@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './style.css';
 
-function Index() {
+function Cart() {
     const history = useHistory();
 
     const goToCheckout = () => {
@@ -62,4 +62,4 @@ function Index() {
     );
 }
 
-export default Index;
+export default Cart;
