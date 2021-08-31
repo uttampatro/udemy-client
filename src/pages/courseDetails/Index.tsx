@@ -18,6 +18,7 @@ import {
 } from './store';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import ReactPlayer from 'react-player';
 import { CourseContentType } from '../../services/dtos/dto';
 
 function CourseDetails() {
@@ -335,20 +336,17 @@ function CourseDetails() {
                                                                         >
                                                                             <Box>
                                                                                 <DialogContentText>
-                                                                                    <video
-                                                                                        width="550"
-                                                                                        height="300"
+                                                                                    <ReactPlayer
+                                                                                        width="550px"
+                                                                                        height="300px"
                                                                                         controls
-                                                                                    >
-                                                                                        <source
-                                                                                            src={
-                                                                                                content
-                                                                                                    .data
-                                                                                                    .videoUrl
-                                                                                            }
-                                                                                            type="video/mp4"
-                                                                                        />
-                                                                                    </video>
+                                                                                        type="video/*"
+                                                                                        url={
+                                                                                            content
+                                                                                                .data
+                                                                                                .videoUrl
+                                                                                        }
+                                                                                    />
                                                                                 </DialogContentText>
                                                                             </Box>
                                                                         </DialogContent>
