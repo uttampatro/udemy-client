@@ -15,6 +15,8 @@ import userServices from '../../services/userServices';
 
 function Header() {
     const history = useHistory();
+    const User = localStorage.getItem('user');
+    const user = User ? JSON.parse(User) : undefined;
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const createCourse = () => {
@@ -110,7 +112,7 @@ function Header() {
                         TransitionComponent={Fade}
                     >
                         <MenuItem onClick={handleClose}>
-                            <Avatar style={{ marginRight: '10px' }} /> Profile
+                            <Avatar style={{ marginRight: '10px' }} /> {user.username}
                         </MenuItem>
                         <hr />
                         <MenuItem
